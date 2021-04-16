@@ -38,7 +38,7 @@ class SpecialItemActivity : AppCompatActivity() {
 
         init {
             // EmptyItemView,需要自定义 UI,声明成员变量再重写里面的方法,否则如果有多个匿名内部类的话,kotlin 会报错
-            val emptyItemView: EmptyItemView = object : EmptyItemView(context, R.layout.layout_empty_view_of_rcv_one_to_one, this) {
+            val emptyItemView: EmptyItemView = object : EmptyItemView(context, R.layout.layout_empty_view_for_rcv_one_to_one, this) {
                 override fun bindViewHolder(holder: BaseViewHolder, itemData: Any?, position: Int) {
                     super.bindViewHolder(holder, itemData, position)
                     holder.setOnClickListener(R.id.btn_refresh, View.OnClickListener {
@@ -65,9 +65,9 @@ class SpecialItemActivity : AppCompatActivity() {
             }
             addItemView(skeletonItemView)
             // HeaderItemView,头布局仅做展示,没有逻辑操作的话,不需要重写 bindViewHolder 方法
-            addItemView(HeaderItemView(context, R.layout.layout_header_view_of_rcv_one_to_one, this))
+            addItemView(HeaderItemView(context, R.layout.layout_header_view_for_rcv_one_to_one, this))
             // HeaderItemView,需要自定义 UI,声明成员变量再重写 bindViewHolder 方法,否则如果有多个匿名内部类的话,kotlin 会报错
-            val headerItemView2: HeaderItemView = object : HeaderItemView(context, R.layout.layout_header_view_of_rcv_one_to_one, this) {
+            val headerItemView2: HeaderItemView = object : HeaderItemView(context, R.layout.layout_header_view_for_rcv_one_to_one, this) {
                 override fun bindViewHolder(holder: BaseViewHolder, itemData: Any?, position: Int) {
                     super.bindViewHolder(holder, itemData, position)
                     holder.setTvText(R.id.text_view, "Header View 2")
@@ -75,9 +75,9 @@ class SpecialItemActivity : AppCompatActivity() {
             }
             addItemView(headerItemView2)
             // FooterItemView,脚布局仅做展示,没有逻辑操作的话,不需要重写 bindViewHolder 方法
-            addItemView(FooterItemView(context, R.layout.layout_footer_view_of_rcv_one_to_one, this))
+            addItemView(FooterItemView(context, R.layout.layout_footer_view_for_rcv_one_to_one, this))
             // FooterItemView,需要自定义 UI,声明成员变量再重写 bindViewHolder 方法,否则如果有多个匿名内部类的话,kotlin 会报错
-            val footerItemView2: FooterItemView = object : FooterItemView(context, R.layout.layout_footer_view_of_rcv_one_to_one, this) {
+            val footerItemView2: FooterItemView = object : FooterItemView(context, R.layout.layout_footer_view_for_rcv_one_to_one, this) {
                 override fun bindViewHolder(holder: BaseViewHolder, itemData: Any?, position: Int) {
                     super.bindViewHolder(holder, itemData, position)
                     holder.setTvText(R.id.text_view, "Footer View 2")
