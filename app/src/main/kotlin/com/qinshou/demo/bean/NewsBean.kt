@@ -1,4 +1,4 @@
-package com.qinshou.demo
+package com.qinshou.demo.bean
 
 /**
  * Author: QinHao

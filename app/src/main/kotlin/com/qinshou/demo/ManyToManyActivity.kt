@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_many_to_many.*
  * Author: QinHao
  * Email:qinhao@jeejio.com
  * Date: 2021/4/15 16:02
- * Description:
+ * Description:多对多布局
  */
 class ManyToManyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +39,9 @@ class ManyToManyActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * 多对多时,由于实体类型不一样,适配器内部会根据 item 类型来加载对应布局
+     */
     private class IntegerItemView(context: Context, rcvBaseAdapter: RcvBaseAdapter<Any>) : BaseItemView<Int?>(context, R.layout.item_rcv_integer, rcvBaseAdapter) {
 
         override fun bindViewHolder(holder: BaseViewHolder, itemData: Int?, position: Int) {
@@ -46,6 +49,9 @@ class ManyToManyActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * 多对多时,由于实体类型不一样,适配器内部会根据 item 类型来加载对应布局
+     */
     private class StringItemView(context: Context, rcvBaseAdapter: RcvBaseAdapter<Any>) : BaseItemView<String?>(context, R.layout.item_rcv_string, rcvBaseAdapter) {
 
         override fun bindViewHolder(holder: BaseViewHolder, itemData: String?, position: Int) {

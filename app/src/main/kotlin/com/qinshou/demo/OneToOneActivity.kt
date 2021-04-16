@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_one_to_one.*
  * Author: QinHao
  * Email:qinhao@jeejio.com
  * Date: 2021/4/15 16:02
- * Description:
+ * Description:一对一布局
  */
 class OneToOneActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
