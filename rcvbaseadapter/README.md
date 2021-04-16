@@ -1,12 +1,10 @@
 # 简介
-
 RecyclerView 通用适配器，不用再写繁琐的 onCreateViewHolder()、getItemCount() 等方法了，只需要在 bindViewHolder() 中关注数据绑定即可。
 除满足一对一（单类型数据对应单类型布局）外，还可以快速实现多对多（多类型数据对应多类型布局），一对多（单类型数据
 对应多类型布局）。
 适配器还支持添加空布局、头布局、脚布局、骨架屏等功能。
 
 # 如何使用
-
 1. 项目的 build.gradle 添加如下依赖
 
 ```xml
@@ -27,7 +25,6 @@ dependencies {
 ```
 
 # 使用说明
-
 一对一时继承 RcvSimpleAdapter，然后在 bindViewHolder() 方法中绑定 UI 即可。
 
 多对多时继承 RcvMultipleAdapter，然后在对应的 ItemView 的 bindViewHolder() 方法中绑定 UI 即可，RcvMultipleAdapter 适配器中会根据不同的数据类型，分发到对应的 ItemView。
@@ -35,39 +32,38 @@ dependencies {
 一对多时也是继承 RcvMultipleAdapter，但是由于数据类型一样，所以在绑定 UI 时适配器没办法分发到对应的 ItemView，需要自己重写 isForViewType() 方法来判断 ItemView 的显示时机。
 
 ## 一对一
-
 1. 定义布局
 
-   item_rcv_string.xml
+    item_rcv_string.xml
 
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="#FFFFFF00"
-          android:orientation="vertical">
-
-       <TextView
-           android:id="@+id/text_view"
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:gravity="center"
-           android:textColor="#FF000000"
-           android:textSize="24sp" />
-   </LinearLayout>
-   ```
+           android:background="#FFFFFF00"
+           android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FF000000"
+            android:textSize="24sp" />
+    </LinearLayout>
+    ```
 
 2. 定义适配器
 
-   ```java
-   class RcvOneToOneAdapter(context: Context) : RcvSimpleAdapter<String>(context, R.layout.item_rcv_string) {
+    ```java
+    class RcvOneToOneAdapter(context: Context) : RcvSimpleAdapter<String>(context, R.layout.item_rcv_string) {
 
-       override fun bindViewHolder(holder: BaseViewHolder, itemData: String?, position: Int) {
-           holder.setTvText(R.id.text_view, itemData)
-       }
-   }
-   ```
+        override fun bindViewHolder(holder: BaseViewHolder, itemData: String?, position: Int) {
+            holder.setTvText(R.id.text_view, itemData)
+        }
+    }
+    ```
 
 3. 设置适配器并填充数据
 
@@ -88,7 +84,6 @@ dependencies {
    ```
 
 ## 多对多
-
 1. 定义布局
 
    item_rcv_integer.xml
