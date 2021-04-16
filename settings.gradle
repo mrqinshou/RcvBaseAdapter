@@ -1,1 +1,2 @@
+include ':rcvbaseadapter'
 include ':app'
