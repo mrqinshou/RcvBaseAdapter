@@ -34,6 +34,6 @@ abstract class BaseItemView<T>(val context: Context, private val layoutId: Int, 
             return false
         }
         val type: Type = genericSuperclass.actualTypeArguments[0]
-        return item::class.java == type
+        return item.javaClass == type
     }
 }
